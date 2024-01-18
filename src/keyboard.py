@@ -12,22 +12,23 @@ FIRST_CHANNEL = 1
 # 4:0 4:1 4:2 4:3 4:4 4:5 4:6
 # 5:0 5:1 5:2 5:3 5:4 5:5 5:6
 
-BASE_TONE = 48
+#BASE_TONE = 48 - 2
+BASE_TONE = 60 - 2 - 6
 
 def get_button_midi_num(select_index, data_index):
     midi_index = -1
     if select_index == 5:
-        midi_index = BASE_TONE - data_index
+        midi_index = BASE_TONE + data_index
     elif select_index == 4:
-        midi_index = BASE_TONE + 7 - data_index
+        midi_index = BASE_TONE + 7 + data_index
     elif select_index == 3:
-        midi_index = BASE_TONE + 12 - data_index
+        midi_index = BASE_TONE + 12 + data_index
     elif select_index == 2:
-        midi_index = BASE_TONE + 12 + 4 - data_index
+        midi_index = BASE_TONE + 12 + 4 + data_index
     elif select_index == 1:
-        midi_index = BASE_TONE + 12 + 7 - data_index
+        midi_index = BASE_TONE + 12 + 7 + data_index
     elif select_index == 0:
-        midi_index = BASE_TONE + 24 - data_index
+        midi_index = BASE_TONE + 24 + data_index
     return midi_index
 
 def on_button_change(select_index, data_index, state):
